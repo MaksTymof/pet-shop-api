@@ -1,0 +1,50 @@
+extends layout
+
+block cont
+    section.section
+      h1= title
+      p Welcome to #{title}
+      .columns
+        .column.is-three-quarters-mobile.is-two-thirds-tablet.is-half-desktop
+          form.container.is-flex.is-flex-wrap-wrap(action="/dashboard/products" method="POST")
+            .field.ml-3
+              label.label Назва товару
+                .control
+                  input.input(type='text' name="title" placeholder='Назва товару' required='')
+            .field.ml-3
+              label.label Код товару
+                .control
+                  input.input(type='text' name="vendor" placeholder='Код товару' required='')
+            .field.ml-3
+              label.label Ціна від 
+                .control
+                  input.input(type='text' name='price' placeholder='Ціна товару від' required='')
+      form.container.is-flex.is-flex-wrap-wrap.is-justify-content-space-around
+          .select.is-primary.multiple
+            select
+              option(selected disabled) Оберіть ширину
+              option 4cm
+              option 8cm
+              option 10cm          
+          .select.is-primary.multiple.ml-3
+            select
+              option(selected disabled) Оберіть довжину
+              option 15-25cm
+              option 25-35cm
+              option 30-45cm          
+          .select.is-primary.multiple.ml-3
+            select
+              option(selected disabled) Оберіть фурнітуру
+              option Classic
+              option Total Black
+              option Metallic
+              option Rose Gold
+          button.button.is-primary(type='submit' onclick="alert('Hello World')") Додати варіацію  
+          
+    .field.ml-3
+      .control
+          button.button.is-primary(type='submit' onclick="alert('Hello World')") Зберегти продукт
+    
+                 
+                
+          
